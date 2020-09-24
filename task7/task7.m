@@ -4,7 +4,7 @@ function output = task7()
     first = task7_1();
 
     disp('Integral:');
-    disp(first(1));
+    pretty(first(1));
 
     disp('Is derivative same as start function?:');
     disp(first(2));

@@ -3,5 +3,5 @@ function output = task9_2()
 
     func = (3 - 0.3 * sqrt(x) + 0.5 * log(x) == 0);
 
-    output = solve(func, x, 'MaxDegree', 5);
+    output = vpasolve(func, x);
 end

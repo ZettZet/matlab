@@ -4,7 +4,7 @@ function output = task9_5()
     func = 3 - 0.3 * sqrt(x) + 0.5 * log(x);
 
     plusinf = limit(func, x, +inf);
-    minusinf = limit(func, x, -inf);
+    zeroright = limit(func, x, 0, 'right');
 
-    output = [plusinf, minusinf];
+    output = [plusinf, zeroright];
 end

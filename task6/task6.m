@@ -1,7 +1,9 @@
-function task6(arr)
+function task6()
+	arr = input('Enter a one-dimensional array (not a vector) ');
+
     globals(arr);
 
-    disp('result of globals');
+    disp('Result of globals');
     first = task6_1();
     disp(first);
 
@@ -11,5 +13,4 @@ function task6(arr)
 
     disp('Is the same?:');
     disp(isequal(first, second));
-
 end
