@@ -35,7 +35,7 @@ function loops(a, b)
 
         for j = 1:col
 
-            if B(i, j) < b && A(i, j) > a
+            if B(i, j) < b && B(i, j) > a
                 B(i, j) = sum_of;
             end
 
