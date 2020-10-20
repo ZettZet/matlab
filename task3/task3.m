@@ -7,7 +7,7 @@ function task3()
     first = loops(arr);
     disp(first);
 
-    second = inMatlab(arr);
+    second = inMatlab(arr);                     
     disp(second);
 
 end

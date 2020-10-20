@@ -6,5 +6,5 @@ function output = task8_2()
     conds = [(y(0) == 0) (Dy(0) == 0)];
     ySol(x) = dsolve(ode, conds);
 
-    output = simplify(ySol);
+    output = collect(collect(simplify(ySol), sin(x)), cos(x));
 end

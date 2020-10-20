@@ -1,4 +1,4 @@
-function output = task7()
+function task7()
     disp('Symbolic integral');
 
     first = task7_1();

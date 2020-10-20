@@ -1,23 +1,32 @@
 function task4_1()
-    y_result_greater = [];
-    y_result_lessorequal = [];
+	TOLLERANCE = 10^(-6);
+	points = fix(4/TOLLERANCE);
+	
+	
+    y_result_greater = zeros(1, points/2);
+    y_result_lessorequal = zeros(1, points/2);
 
-    x_result_greater = [];
-    x_result_lessorequal = [];
+    x_result_greater = zeros(1, points/2);
+    x_result_lessorequal = zeros(1, points/2);
 
-    for x = linspace(-2, 2)
-
-        if (x <= 0)
-            x_result_lessorequal = [x_result_lessorequal (x)];
-            y_result_lessorequal = [y_result_lessorequal (lessOrEqual(x))];
-        else
-            x_result_greater = [x_result_greater (x)];
-            y_result_greater = [y_result_greater (greater(x))];
-        end
-
-    end
+    for i = 1:points
+        if (-2+i*TOLLERANCE <= 0)
+            x_result_lessorequal(i) = -2+i*TOLLERANCE;
+            y_result_lessorequal(i) = lessOrEqual(-2+i*TOLLERANCE);
+		elseif (-2+i*TOLLERANCE > 0)
+            x_result_greater(i) = -2+i*TOLLERANCE;
+            y_result_greater(i) = greater(-2+i*TOLLERANCE);
+		end
+	end
+	
+	index = find(y_result_greater == 0 & x_result_greater == 0);
+	y_result_greater(index) = [];
+	x_result_greater(index) = [];
 
     plot(x_result_lessorequal, y_result_lessorequal, 'r', x_result_greater, y_result_greater, 'r');
+	hold on
+    scatter(0, greater(0));
+    hold off
     title('Using loops', 'Interpreter', 'latex');
     legend('$y(x)=\sqrt{x^2+1}, x\leq 0$', '$y(x)=\frac{x+1}{\sqrt[3]{1+{\mathrm{e}}^{-0.5x}+1}}, x>0$', 'Interpreter', 'latex', 'FontSize', 14);
 end

@@ -32,7 +32,7 @@ function task9()
     sgn_p = sign(dy(extr + rand()));
     sgn_m = sign(dy(extr - rand()));
 
-    fprintf('     %0d      %d      %0d     \n', sgn_m, extr, sgn_p);
+    fprintf('\t%0d\t%d\t%0d\t\n', sgn_m, extr, sgn_p);
 
     if sgn_m < sgn_p
         disp('Local minimum: ');
@@ -49,7 +49,7 @@ function task9()
 
     sgn_p = sign(ddy(extr + rand()));
     sgn_m = sign(ddy(extr - rand()));
-    fprintf('     %0d      %d      %0d     \n', sgn_m, extr, sgn_p);
+    fprintf('\t%0d\t%d\t%0d\t\n', sgn_m, extr, sgn_p);
 
     if sgn_m > 0
         fprintf('Strictly convex when x < %d\n', extr);

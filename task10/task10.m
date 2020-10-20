@@ -5,6 +5,10 @@ function task10()
     disp('Numeric solution in matlab:');
     first = task10_1_1();
     disp(first);
+	
+	disp('Alternative numeric solution in matlab');
+	alter = task10_1_3();
+	disp(alter);
 
     disp('Symbolic solution in matlab:');
     second = task10_1_2();
@@ -24,9 +28,9 @@ function task10()
     disp(isequal(first, third));
     disp(first - third);
 
-    disp('2?=3');
-    disp(isequal(second, third));
-    disp(second - third);
+    disp('1?=alter');
+    disp(isequal(first, alter));
+    disp(first - alter);
 
     [vectors, values, rang] = task10_3();
     disp('Eigenvectors');

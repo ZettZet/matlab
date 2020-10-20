@@ -3,5 +3,5 @@ function output = task8_1()
     interval = [0 2];
     conditions = [0; 0];
 
-    output = ode45(ode, interval, conditions);
+    output = ode23(ode, interval, conditions);
 end
